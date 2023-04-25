@@ -6,8 +6,8 @@ function main(){
     let contador = 1
     let soma = 0
     let total_cashback = 0
-    const maior_valor_cashback = 0
-    const menor_valor_cashback = 0
+    let maior_valor_cashback = 0
+    let menor_valor_cashback = Infinity
    
     //informar valores das compras
     
@@ -28,8 +28,12 @@ function main(){
         total_cashback = total_cashback + cashback
 
         //maior e menor valores
-        const maior_valor = maior(cashback)
-        const menor_valor_cashback = menor(cashback)
+        if (cashback > maior_valor_cashback) {
+            maior_valor_cashback = cashback
+        }
+        if (cashback < menor_valor_cashback) {
+            menor_valor_cashback = cashback
+        }
 
         contador++
     }
@@ -58,25 +62,6 @@ function calcular_cashback(s){
     return resultado
 }
 
-function maior(c){
-    let r = c
-    let maior
-    if (c > r){
-        maior = c
-    }else{
-        maior = maior
-    }
-    return maior
-}
 
-function menor(c){
-    let menor = c
-    if (c > menor){
-        menor = c
-    }else{
-        menor = menor
-    }
-    return menor
-}
 
 main()
