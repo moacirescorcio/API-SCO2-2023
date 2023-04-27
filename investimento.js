@@ -18,6 +18,7 @@ function main(){
         valor_objetivo += investimento_mensal * (taxa_de_juros/100)
         meses++
     }
+    console.log(valor_objetivo)
     console.log(`O valor final com o investimento incial foi de R$${valor_objetivo.toFixed(2)}`)
 
     let anos = 0
