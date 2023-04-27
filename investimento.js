@@ -9,13 +9,13 @@ function main(){
     const taxa_de_juros = question('Qual da taxa de juros escolhida?(0,01 até 1,00) ')
 
     //calculando investimento mensal
-    let investimento_mensal = calcular_investimento(salario,investimento)
+    const investimento_mensal = calcular_investimento(salario,investimento)
 
     let meses = 0
     let valor_objetivo = 0
-    while (valor_objetivo < valor_necessário){
-        investimento_mensal = investimento_mensal + investimento_mensal
-        valor_objetivo = valor_objetivo + (investimento_mensal * (taxa_de_juros/100))
+    while (valor_objetivo <= valor_necessário){
+        valor_objetivo += investimento_mensal
+        valor_objetivo += investimento_mensal * (taxa_de_juros/100)
         meses++
     }
 
