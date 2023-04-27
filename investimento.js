@@ -9,11 +9,12 @@ function main(){
     const taxa_de_juros = question('Qual da taxa de juros escolhida?(0,01 até 1,00) ')
 
     //calculando investimento mensal
-    const investimento_mensal = calcular_investimento(salario,investimento)
+    let investimento_mensal = calcular_investimento(salario,investimento)
 
     let meses = 0
     let valor_objetivo = 0
     while (valor_objetivo < valor_necessário){
+        investimento_mensal = investimento_mensal + investimento_mensal
         valor_objetivo = valor_objetivo + (investimento_mensal * (taxa_de_juros/100))
         meses++
     }
@@ -23,9 +24,9 @@ function main(){
     if (meses > 12){
         anos = Math.floor(meses / 12)
         meses2 = meses % 12
-        console.log(`Antingirá o valor em ${anos} anos e ${meses2} meses.`)
+        console.log(`Atingirá o valor em ${anos} anos e ${meses2} meses.`)
     }else{        
-        console.log(`Atigirá o valor em ${meses} meses!`)
+        console.log(`Atingirá o valor em ${meses} meses!`)
     }
 }
 
