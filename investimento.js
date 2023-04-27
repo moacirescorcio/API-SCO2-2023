@@ -13,11 +13,12 @@ function main(){
 
     let meses = 0
     let valor_objetivo = 0
-    while (valor_objetivo <= valor_necessário){
+    while (valor_objetivo < valor_necessário){
         valor_objetivo += investimento_mensal
         valor_objetivo += investimento_mensal * (taxa_de_juros/100)
         meses++
     }
+    console.log(`O valor final com o investimento incial foi de R$${valor_objetivo.toFixed(2)}`)
 
     let anos = 0
     let meses2 = 0
