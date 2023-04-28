@@ -5,14 +5,14 @@ function main(){
     const valor_emprestimo = Number(question('Qual o valor do empréstimo? '))
     let prazo = Number(question('Prazo desesejado (mín 2x):'))
 
-    //caso prazo seja menor que 2
+    //caso prazo seja menor que 2 ou maior que 24
     while (prazo < 2 || prazo > 24){
         console.log('Prazo inválido!')
         prazo = Number(question('Prazo desejado (mín. 2): '))
     }
     
     const iof = calcular_iof(valor_emprestimo,prazo)
-    const selic = calcular_selic(prazo)
+    const juros = calcula_juros_selic(prazo)
 }
 
 function calcular_iof(v,p){
@@ -21,7 +21,7 @@ function calcular_iof(v,p){
     return (Math.floor(resultado))
 }
 
-function calcular_selic(p){
+function calcula_juros_selic(p){
     let resultado
     if (p <= 6){
         resultado = 0.50 * (13.75/100)
