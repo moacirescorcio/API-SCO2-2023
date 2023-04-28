@@ -23,7 +23,17 @@ function calcular_iof(v,p){
 
 function calcular_selic(p){
     let resultado
-    if (p)
+    if (p <= 6){
+        resultado = 0.50 * (13.75/100)
+    }else if (p <= 12){
+        resultado = 0.75 * (13.75/100)
+    }else if (p <= 18){
+        resultado = 13.75
+    }else if (p > 18){
+        resultado = 1.3* (13.75/100)
+    }
+
+    return resultado
 }
 
 main()
